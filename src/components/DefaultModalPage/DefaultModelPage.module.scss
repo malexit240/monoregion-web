@@ -1,0 +1,30 @@
+@use '../../styles/colors.scss';
+
+.page {
+    background-color: colors.$white;
+    box-shadow: 0rem 0.1rem 0.5rem colors.$black;
+
+    min-width: 16rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    header {
+        h1 {
+            font-size: 1.2rem;
+        }
+    }
+
+    main {
+        min-height: 3rem;
+        border-top: 0.1rem solid colors.$gray;
+        border-bottom: 0.1rem solid colors.$gray;
+        margin: 1rem 0;
+    }
+
+    footer {
+        display: flex;
+        flex: none;
+        justify-content: space-between;
+    }
+
+}

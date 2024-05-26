@@ -1,0 +1,23 @@
+@use '../../styles/colors.scss';
+
+.modal-page-container {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 5rem;
+    background-color: transparent;
+}
+
+dialog::backdrop {
+    background-color: colors.$black;
+    opacity: 0.5;
+}
+
+.deleteme-content {
+    width: 10rem;
+    height: 10rem;
+    background-color: rebeccapurple;
+}

@@ -1,11 +1,15 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { loginReducer } from '../features/login';
 import { popupReducer } from '../features/popup';
+import { directionsReducer } from '../features/directions';
+import { modalPageReducer } from '../features/modalPage';
 
 export const store = configureStore({
   reducer: {
     login: loginReducer,
     popup: popupReducer,
+    directions: directionsReducer,
+    modalPage: modalPageReducer,
   },
 });
 

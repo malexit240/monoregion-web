@@ -33,7 +33,8 @@ export function LoginPage() {
         const response = await DataProvider.Execute(LogInUser(state.username, state.password));
 
         if (response.isSuccess) {
-            localStorage.setItem('user', JSON.stringify(response.result));
+            DataProvider.SetNewAccessToken(response.result.accessToken);
+            // localStorage.setItem('user', JSON.stringify(response.result));
 
             document.location.replace(document.location.origin + '/directions');
         }
@@ -77,13 +78,13 @@ export function LoginPage() {
     }
 
     return <>
-        <header className={styles['header']}>
+        <header className='header'>
 
             <p>Monoregion</p>
 
         </header>
 
-        <main className={styles['main']}>
+        <main className='main'>
 
             <h1>Sign up</h1>
 

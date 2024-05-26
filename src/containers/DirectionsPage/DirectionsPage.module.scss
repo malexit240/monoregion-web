@@ -1,0 +1,48 @@
+@use '../../styles/colors.scss';
+@use '../../styles/sizes.scss';
+
+.directions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.direction-card {
+    background-color: colors.$light-gray;
+    border: 0.2rem solid black;
+    width: calc(sizes.$container-width/3 - 2rem);
+    height: calc(sizes.$container-width/5 - 2rem);
+    transition: transform .15s;
+    display: grid;
+    place-items: center;
+    flex: none;
+    border-radius: 0.4rem;
+
+
+    h2 {
+        text-align: center;
+        width: fit-content;
+        height: fit-content;
+        user-select: none;
+    }
+}
+
+.direction-card:hover {
+    transform: scale(1.05);
+}
+
+.controls {
+    padding: 1rem 0rem;
+    margin: 0rem 1rem;
+
+    display: flex;
+    justify-content: flex-end;
+
+    border-bottom: 0.1rem solid colors.$light-gray;
+}
+
+.add-direction-button {
+    justify-self: flex-end;
+}

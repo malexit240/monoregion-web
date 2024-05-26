@@ -54,6 +54,7 @@ class PrivateDataProvider {
     }
 
     public SetNewAccessToken(token: string) {
+        localStorage.setItem('accessToken', token);
         this.auth = `Bearer ${token}`;
         this.isAuthorized = true;
     }
