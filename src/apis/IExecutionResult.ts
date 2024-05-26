@@ -1,5 +1,6 @@
 export interface IExecutionResult<T> {
-    statusCode: number;
-    errorMessage: string;
-    result: T;
+    statusCode: number,
+    isSuccess: boolean,
+    errorMessage: string,
+    result: T
 }

@@ -1,0 +1,73 @@
+@use '../../styles/colors.scss';
+@use '../../styles/sizes.scss';
+
+.header {
+    max-width: sizes.$container-width;
+    margin: 0 auto;
+    background-color: colors.$dark-accent;
+
+    padding: 1rem;
+    box-shadow: 0rem 0.1rem 0.2rem colors.$black;
+    position: relative;
+    z-index: 1;
+
+    p {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 600;
+        text-shadow: 0rem 0rem 1rem colors.$light-gray;
+    }
+}
+
+.main {
+    margin: 0 auto;
+    height: 100dvh;
+    background-color: colors.$white;
+    max-width: sizes.$container-width;
+
+
+
+    h1 {
+        text-align: center;
+        margin: 0;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+}
+
+.form {
+    border: 0.15rem solid colors.$gray;
+    border-radius: 1rem;
+    display: block;
+    padding: 1rem;
+    margin: 0 auto;
+    width: fit-content;
+
+    input,
+    label {
+        display: block;
+        color: colors.$black;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+
+    }
+
+    input {
+        padding: 0.5rem;
+        border-radius: 0.4rem;
+        border: 0.15rem solid colors.$gray;
+    }
+
+    label {
+        font-weight: 500;
+    }
+
+    .buttons {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        height: 2rem;
+    }
+
+
+}

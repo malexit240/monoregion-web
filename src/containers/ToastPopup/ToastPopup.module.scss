@@ -1,0 +1,35 @@
+@use '../../styles/colors.scss';
+@use '../../styles/sizes.scss';
+
+.modal-container {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.popup {
+    background-color: colors.$white;
+    max-width: 20rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.1rem 0.3rem colors.$gray;
+}
+
+.popup-info {
+    background-color: colors.$info;
+}
+
+.popup-success {
+    background-color: colors.$success;
+}
+
+.popup-warning {
+    background-color: colors.$warning;
+}
+
+.popup-error {
+    background-color: colors.$danger;
+}
