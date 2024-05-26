@@ -15,11 +15,24 @@ export function LoginPage() {
 
     const modal = document.getElementById('modal');
 
+    function isInputValid() {
+        return state.username?.length > 5 && state.password?.length > 5;
+    }
+
     async function onLoginClick() {
+        if (!isInputValid()) {
+            dispath(popupActions.addWarning(
+                {
+                    title: 'Warning',
+                    content: 'username and password length must be more then 5'
+                }));
+
+            return;
+        }
 
         const response = await DataProvider.Execute(LogInUser(state.username, state.password));
 
-        if (response.statusCode == 200) {
+        if (response.isSuccess) {
             localStorage.setItem('user', JSON.stringify(response.result));
 
             document.location.replace(document.location.origin + '/directions');
@@ -35,15 +48,31 @@ export function LoginPage() {
 
     async function onSignupClick() {
 
-        try {
-            const response = await DataProvider.Execute(SignUpUser(state.username, state.password));
+        if (!isInputValid()) {
+            dispath(popupActions.addWarning(
+                {
+                    title: 'Warning',
+                    content: 'username and password length must be more then 5'
+                }));
 
-            if (response.statusCode == 200) {
-            }
-            else {
-            }
-        } catch (error) {
-            console.log(error);
+            return;
+        }
+
+        const response = await DataProvider.Execute(SignUpUser(state.username, state.password));
+
+        if (response.isSuccess) {
+            dispath(popupActions.addSuccess(
+                {
+                    title: 'Success',
+                    content: 'You account created now. Please, login'
+                }));
+        }
+        else {
+            dispath(popupActions.addError(
+                {
+                    title: 'Error',
+                    content: response.errorMessage,
+                }));
         }
     }
 
