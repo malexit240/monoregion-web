@@ -1,6 +1,7 @@
 import axios, { AxiosError } from "axios";
 import { IHandler } from "./IHandler";
 import { IExecutionResult } from "./IExecutionResult";
+import { Ping } from "./cases/Ping";
 
 class PrivateDataProvider {
     private baseUrl = 'http://localhost:5005/';
@@ -16,13 +17,18 @@ class PrivateDataProvider {
         }
     }
 
+    public async HasConnection(): Promise<boolean> {
+        const response = await this.Execute(Ping());
+        return response.isSuccess;
+    }
+
     public async Execute<T>(handler: IHandler<T>): Promise<IExecutionResult<T>> {
 
         const headers = {
             'Content-Type': 'application/json-patch+json',
             Accept: '*/*',
             Authorization: handler.isPrivate ? this.auth : undefined,
-            'ngrok-skip-browser-warning' : '69420',
+            'ngrok-skip-browser-warning': '69420',
         };
 
         try {

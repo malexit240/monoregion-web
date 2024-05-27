@@ -29,19 +29,18 @@ span {
 
 input,
 label {
-    display: block;
-    color: colors.$black;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+  display: block;
+  color: colors.$black;
+  font-size: 1rem;
 
 }
 
 input {
-    padding: 0.5rem;
-    border-radius: 0.4rem;
-    border: 0.15rem solid colors.$gray;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 0.15rem solid colors.$gray;
 }
 
 label {
-    font-weight: 500;
+  font-weight: 500;
 }

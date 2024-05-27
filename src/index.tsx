@@ -13,6 +13,7 @@ import './styles/general.scss'
 
 import { ModalContainer } from './containers/ToastPopup/ModalContainer';
 import { ModalPageContainer } from './containers/ModalPageContainer/ModalPageContainer';
+import { ConnectionChecker } from './ConnectionChecker';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -26,6 +27,8 @@ root.render(
       <ModalContainer />
 
       <ModalPageContainer />
+
+      <ConnectionChecker />
 
     </Provider>
   </React.StrictMode>

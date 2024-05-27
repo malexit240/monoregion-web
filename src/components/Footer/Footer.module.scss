@@ -20,4 +20,13 @@
         font-weight: 600;
         text-shadow: 0rem 0rem 1rem colors.$light-gray;
     }
+
+    .github-references {
+
+        p,
+        a {
+            font-size: 1.1rem;
+            color: colors.$white;
+        }
+    }
 }
