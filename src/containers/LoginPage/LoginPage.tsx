@@ -35,7 +35,7 @@ export function LoginPage() {
         if (response.isSuccess) {
             DataProvider.SetNewAccessToken(response.result.accessToken);
 
-            document.location.replace(document.location.origin + '/directions');
+            document.location.replace(document.location.href + '/directions');
         }
         else {
             dispath(popupActions.addError(
