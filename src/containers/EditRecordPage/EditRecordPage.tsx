@@ -18,7 +18,7 @@ export function EditRecrodPage() {
 
     useEffect(() => {
         dispatch(recordsActions.loadRecord(recordId));
-    }, [recordId]);
+    }, []);
 
     async function onSave() {
         const response = await DataProvider.Execute(SaveRecord(
