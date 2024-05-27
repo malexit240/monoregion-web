@@ -4,7 +4,7 @@ import { modalPageActions } from '../../features/modalPage'
 import { useAppDispatch } from '../../app/hooks'
 
 interface Props {
-    children: any,
+    children?: any,
     title: string,
     footer?: any,
 }

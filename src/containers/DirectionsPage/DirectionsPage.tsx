@@ -1,14 +1,17 @@
+import styles from './DirectionsPage.module.scss'
+
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 
-import { DataProvider } from '../../apis/apis';
-import { GetDirections } from '../../apis/cases/Direction/GetDirections';
-
 import { directionsActions } from '../../features/directions';
 
-import styles from './DirectionsPage.module.scss'
 import { modalPageActions } from '../../features/modalPage';
 import { AddDirectionModalPage } from '../AddDirectionModalPage/AddDirectionModalPage';
+import { Link } from 'react-router-dom';
+import { Header } from '../../components/Header/Header';
+import { Footer } from '../../components/Footer/Footer';
+import { CardsContainer } from '../../components/Cards/CardsContainer';
+import { Card } from '../../components/Cards/Card';
 
 export function DirectionsPage() {
     const state = useAppSelector(s => s.directions);
@@ -19,9 +22,7 @@ export function DirectionsPage() {
     }, []);
 
     return <>
-        <header className='header'>
-            <p>Monoregion</p>
-        </header>
+        <Header />
 
         <main className='main'>
 
@@ -33,16 +34,18 @@ export function DirectionsPage() {
 
             </section>
 
-            <section className={styles['directions']}>
+            <CardsContainer>
 
-                {state.directions.map(d => {
-                    return <article key={d.id} className={styles['direction-card']}>
+                {state.directions.map(d =>
+                    <Card key={d.id} href={`/directions/${d.id}`}>
                         <h2> {d.name}</h2>
-                    </article>
-                })}
+                    </Card>
+                )}
 
-            </section>
+            </CardsContainer>
 
         </main>
+
+        <Footer />
     </>
 }

@@ -6,11 +6,8 @@
     margin: 0rem 1rem;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 
     border-bottom: 0.1rem solid colors.$light-gray;
-}
-
-.add-direction-button {
-    justify-self: flex-end;
 }

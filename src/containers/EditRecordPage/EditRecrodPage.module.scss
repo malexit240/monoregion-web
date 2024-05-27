@@ -1,0 +1,32 @@
+@use '../../styles/colors.scss';
+@use '../../styles/sizes.scss';
+
+
+.editor {
+    padding: 1rem;
+}
+
+.title {
+    border: none;
+    border-radius: 0rem;
+    border-bottom: inherit;
+    background-color: transparent;
+    width: 20rem;
+}
+
+.title:focus{
+    border: 0.1rem solid gray;
+}
+
+.textarea {
+    padding: 1rem;
+    color: colors.$black;
+    font-size: 1rem;
+    resize: none;
+    width: 100%;
+    min-height: 10rem;
+    height: 100dvh;
+    background-color: colors.$white;
+    border: 0.15rem solid colors.$light-gray;
+    border-radius: 0.5rem;
+}

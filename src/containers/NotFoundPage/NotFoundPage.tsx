@@ -1,5 +1,7 @@
+import styles from './NotFoundPage.module.scss';
+
 export function NotFoundPage() {
-    return <section>
-        <h1>404 NOT FOUND</h1>
-    </section>
+    return <main className={styles['container404']}>
+        <h1>😥 NOT FOUND 🙈</h1>
+    </main>
 }

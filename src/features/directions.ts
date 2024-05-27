@@ -19,7 +19,7 @@ export const directionsSlice = createSlice({
     extraReducers: builder => {
         builder.addCase(loadDirectionsAsync.fulfilled, (s, a) => {
             if (a.payload.isSuccess) {
-                s.directions = a.payload.result;
+                s.directions = a.payload.result ?? [];
             }
         });
     }
@@ -28,7 +28,6 @@ export const directionsSlice = createSlice({
 const loadDirectionsAsync = createAsyncThunk(
     'directions/loadDirectionsAsync',
     async () => await DataProvider.Execute(GetDirections())
-
 )
 
 export const directionsReducer = directionsSlice.reducer;

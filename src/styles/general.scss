@@ -18,27 +18,9 @@
     border-color: colors.$dark-accent;
 }
 
-.header {
-    max-width: sizes.$container-width;
-    margin: 0 auto;
-    background-color: colors.$dark-accent;
-
-    padding: 1rem;
-    box-shadow: 0rem 0.1rem 0.2rem colors.$black;
-    position: relative;
-    z-index: 1;
-
-    p {
-        margin: 0;
-        font-size: 2rem;
-        font-weight: 600;
-        text-shadow: 0rem 0rem 1rem colors.$light-gray;
-    }
-}
-
 .main {
     margin: 0 auto;
-    height: 100dvh;
+    min-height: 100dvh;
     background-color: colors.$white;
     max-width: sizes.$container-width;
 
@@ -48,4 +30,15 @@
         padding-top: 2rem;
         padding-bottom: 1rem;
     }
+}
+
+.up-controls {
+    padding: 1rem 0rem;
+    margin: 0rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 0.1rem solid colors.$light-gray;
 }

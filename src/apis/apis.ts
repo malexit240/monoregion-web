@@ -3,7 +3,7 @@ import { IHandler } from "./IHandler";
 import { IExecutionResult } from "./IExecutionResult";
 
 class PrivateDataProvider {
-    private baseUrl = 'http://localhost:5005';
+    private baseUrl = 'http://localhost:5005/';
     private auth = '';
     private isAuthorized: boolean = false;
 
@@ -22,6 +22,7 @@ class PrivateDataProvider {
             'Content-Type': 'application/json-patch+json',
             Accept: '*/*',
             Authorization: handler.isPrivate ? this.auth : undefined,
+            'ngrok-skip-browser-warning' : '69420',
         };
 
         try {

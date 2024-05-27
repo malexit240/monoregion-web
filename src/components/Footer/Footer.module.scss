@@ -1,0 +1,23 @@
+@use '../../styles/colors.scss';
+@use '../../styles/sizes.scss';
+
+.footer {
+    max-width: sizes.$container-width;
+    margin: 0 auto;
+    background-color: colors.$dark-accent;
+
+    padding: 1rem;
+    box-shadow: 0rem -0.1rem 0.2rem colors.$black;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-shadow: 0rem 0rem 1rem colors.$light-gray;
+    }
+}

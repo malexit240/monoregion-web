@@ -8,12 +8,12 @@ import { SignUpUser } from '../../apis/cases/User/SignUp';
 
 import { loginActions } from '../../features/login';
 import { popupActions } from '../../features/popup';
+import { Header } from '../../components/Header/Header';
+import { Footer } from '../../components/Footer/Footer';
 
 export function LoginPage() {
     const state = useAppSelector(s => s.login);
     const dispath = useAppDispatch();
-
-    const modal = document.getElementById('modal');
 
     function isInputValid() {
         return state.username?.length > 5 && state.password?.length > 5;
@@ -34,7 +34,6 @@ export function LoginPage() {
 
         if (response.isSuccess) {
             DataProvider.SetNewAccessToken(response.result.accessToken);
-            // localStorage.setItem('user', JSON.stringify(response.result));
 
             document.location.replace(document.location.origin + '/directions');
         }
@@ -78,11 +77,8 @@ export function LoginPage() {
     }
 
     return <>
-        <header className='header'>
 
-            <p>Monoregion</p>
-
-        </header>
+        <Header />
 
         <main className='main'>
 
@@ -115,5 +111,7 @@ export function LoginPage() {
             </form>
 
         </main>
+
+        <Footer />
     </>
 }

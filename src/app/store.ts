@@ -3,6 +3,7 @@ import { loginReducer } from '../features/login';
 import { popupReducer } from '../features/popup';
 import { directionsReducer } from '../features/directions';
 import { modalPageReducer } from '../features/modalPage';
+import { recordsReducer } from '../features/records';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     popup: popupReducer,
     directions: directionsReducer,
     modalPage: modalPageReducer,
+    records: recordsReducer,
   },
 });
 
