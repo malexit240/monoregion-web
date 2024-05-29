@@ -5,11 +5,12 @@ import { LoginPage } from './containers/LoginPage/LoginPage';
 import { DirectionsPage } from './containers/DirectionsPage/DirectionsPage';
 import { RecordsPage } from './containers/RecordsPage/RecordsPage';
 import { EditRecrodPage } from './containers/EditRecordPage/EditRecordPage';
+import { Redirect } from './helpers/Redirect';
 
-export const appRouter = createBrowserRouter([
+export const authorizedRouter = createBrowserRouter([
     {
         path: '/',
-        Component: LoginPage,
+        Component: () => Redirect('/directions'),
     },
     {
         path: '/directions',
@@ -28,3 +29,20 @@ export const appRouter = createBrowserRouter([
         Component: NotFoundPage,
     }
 ]);
+
+export const unauthorizedRouter = createBrowserRouter([
+    {
+        path: '/',
+        Component: () => Redirect('/login'),
+    },
+    {
+        path: '/login',
+        Component: LoginPage,
+    },
+    {
+        path: '*',
+        Component: NotFoundPage,
+    }
+]);
+
+

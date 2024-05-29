@@ -10,10 +10,13 @@ import { loginActions } from '../../features/login';
 import { popupActions } from '../../features/popup';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
+import { rootActions } from '../../features/root';
+import { useNavigate } from 'react-router-dom';
 
 export function LoginPage() {
     const state = useAppSelector(s => s.login);
     const dispath = useAppDispatch();
+    const navigate = useNavigate();
 
     function isInputValid() {
         return state.username?.length > 5 && state.password?.length > 5;
@@ -34,8 +37,8 @@ export function LoginPage() {
 
         if (response.isSuccess) {
             DataProvider.SetNewAccessToken(response.result.accessToken);
-
-            document.location.replace(document.location.href + '/directions');
+            dispath(rootActions.authorize());
+            navigate('/');
         }
         else {
             dispath(popupActions.addError(

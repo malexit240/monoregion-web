@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 
-import { appRouter } from './appRouter';
+import { authorizedRouter, unauthorizedRouter } from './appRouter';
 import { store } from './app/store';
 
 import reportWebVitals from './reportWebVitals';
@@ -15,6 +15,7 @@ import { ModalContainer } from './containers/ToastPopup/ModalContainer';
 import { ModalPageContainer } from './containers/ModalPageContainer/ModalPageContainer';
 import { ConnectionChecker } from './ConnectionChecker';
 import { DataProvider } from './apis/apis';
+import { useAppSelector } from './app/hooks';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -35,17 +36,25 @@ function NoConnectionPage() {
   </>
 }
 
+function Core() {
+  const isAuthorized = useAppSelector(s => s.root.isAuthorized);
+
+  return <>
+    <RouterProvider router={isAuthorized ? authorizedRouter : unauthorizedRouter} />
+
+    <ModalContainer />
+
+    <ModalPageContainer />
+
+    <ConnectionChecker />
+  </>
+}
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
 
-      <RouterProvider router={appRouter} />
-
-      <ModalContainer />
-
-      <ModalPageContainer />
-
-      <ConnectionChecker />
+      <Core />
 
     </Provider>
   </React.StrictMode>

@@ -11,6 +11,10 @@
     position: relative;
     z-index: 1;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     a {
         text-decoration: none;
 
@@ -22,9 +26,10 @@
         }
     }
 
-    >p {
+    .disclaimer {
         font-weight: 500;
         color: colors.$danger;
         margin-top: 0.5rem;
+        // backface-visibility: hidden;
     }
 }

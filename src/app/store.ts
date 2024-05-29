@@ -4,6 +4,7 @@ import { popupReducer } from '../features/popup';
 import { directionsReducer } from '../features/directions';
 import { modalPageReducer } from '../features/modalPage';
 import { recordsReducer } from '../features/records';
+import { rootReducer } from '../features/root';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     directions: directionsReducer,
     modalPage: modalPageReducer,
     records: recordsReducer,
+    root: rootReducer,
   },
 });
 
