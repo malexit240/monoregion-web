@@ -4,7 +4,7 @@ import { IExecutionResult } from "./IExecutionResult";
 import { Ping } from "./cases/Ping";
 
 class PrivateDataProvider {
-    private baseUrl = 'http://localhost:5005/';
+    private baseUrl = 'https://4212-46-119-239-150.ngrok-free.app';
     private auth = '';
     private isAuthorized: boolean = false;
 

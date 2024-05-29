@@ -6,5 +6,9 @@ export function Header() {
         <Link to='/directions'>
             <p>Monoregion</p>
         </Link>
+
+        <p>(work in progress / very early version)</p>
+        <p>(backend can be unreachable)</p>
+        
     </header>
 }

@@ -13,12 +13,18 @@
 
     a {
         text-decoration: none;
+
+        p {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+            text-shadow: 0rem 0rem 1rem colors.$light-gray;
+        }
     }
 
-    p {
-        margin: 0;
-        font-size: 2rem;
-        font-weight: 600;
-        text-shadow: 0rem 0rem 1rem colors.$light-gray;
+    >p {
+        font-weight: 500;
+        color: colors.$danger;
+        margin-top: 0.5rem;
     }
 }

@@ -6,7 +6,7 @@ import { DirectionsPage } from './containers/DirectionsPage/DirectionsPage';
 import { RecordsPage } from './containers/RecordsPage/RecordsPage';
 import { EditRecrodPage } from './containers/EditRecordPage/EditRecordPage';
 
-export const appRouter = createHashRouter([
+export const appRouter = createBrowserRouter([
     {
         path: '/',
         Component: LoginPage,
